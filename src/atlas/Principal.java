@@ -14,16 +14,19 @@ public class Principal {
 
     public static void main(String[] args) {
         
+        //Se crean correlativo
         int correlativo = 10;
         String NombreEquipo;
+        //Se define deporte
         String Deporte = "Handball";
         
         Usuario usuario1 = new Usuario();
         Usuario usuario2 = new Usuario();
         Usuario usuario3 = new Usuario();
         
+        //Se registran los usuarios
         System.out.println("==== REGISTRO DE USUARIOS EN EL SISTEMA ====");
-        
+        //Registro de usuario 1
         System.out.println("|_ Registrando: docog");
         usuario1.setId(1000);
         usuario1.setRun(26539208, '3');
@@ -32,7 +35,7 @@ public class Principal {
         usuario1.setTelefono("56635221254");
         usuario1.setEmail("david.cogiolle@gmail.com");
         usuario1.setPassword("Afds22231");
-        
+        //Registro de usuario 2
         System.out.println("|_ Registrando: ggft");
         usuario2.setId(1001);
         usuario2.setRun(26539208, '3');
@@ -41,7 +44,7 @@ public class Principal {
         usuario2.setTelefono("56828884115");
         usuario2.setEmail("gerr.adere@live.cl");
         usuario2.setPassword("G1ovanniGg34");
-        
+        //Registro de usuario 3
         System.out.println("|_ Registrando: scodiio");
         usuario3.setId(1002);
         usuario3.setRun(26539208, '3');
@@ -52,11 +55,13 @@ public class Principal {
         usuario3.setPassword("5534Gato33");
         
         System.out.println("\n==== FIN REGISTRO DE USUARIOS EN EL SISTEMA ====\n");
-                
+        //Se registran los equipos (clubes?)       
         System.out.println("==== INICIO REGISTRO DE EQUIPOS DEPORTIVOS ====");
         System.out.println("|_ Registrando: Arsenal de Coquimbo");
+        //Se define nombre de equipo para generar ID
         NombreEquipo="Arsenal de Coquimbo";
         Equipo equipo1 = new Equipo();
+        //Se genera codigo del equipo desde el correlativo, nombre y deporte (handball)
         equipo1.setCodigo(correlativo++, NombreEquipo, Deporte);
         equipo1.setDeporte(Deporte);
         equipo1.setNombre(NombreEquipo);
@@ -99,6 +104,8 @@ public class Principal {
         System.out.println("\n==== FIN REGISTRO DE EQUIPOS DEPORTIVOS ====\n");
         
         System.out.println("==== INICIO SUSCRIPCIONES ====");
+        //Se registran suscripciones a equipos
+        //con correlativo iniciando en 1000 y aumentando de 10 en 10
         int correlativoSuscripcion = 1000;
         
         //Un método que nos permita suscribirnos a un club.
