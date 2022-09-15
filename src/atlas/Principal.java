@@ -163,14 +163,15 @@ public class Principal {
         System.out.println("\n==== ACTUALIZANDO NOMBRE EQUIPO 2 ====");
         //Un método que nos permita cambiar el nombre a un club, actualizando su código correspondiente.
         String nuevoCodigo = equipo2.actualizaNombreEquipo("La Florida City", correlativo++, "Handball");
-        System.out.println("|_ Se actualizo el nombre del equipo 2, nuevo código: " + nuevoCodigo);
+        System.out.println("|_ Se actualizo el nombre del equipo 2 a "+ equipo2.getNombre() + ", nuevo código: " + nuevoCodigo);
         
         System.out.println("\n==== ACTUALIZANDO PRECIO EQUIPO 1 ====");
         //Una forma que nos actualice los precios según los clubes que estemos suscritos.
         equipo1.actualizaPrecioSuscripcion(20000);
         suscripcion1.agregaEquipos(equipo1, true);
         suscripcion1.agregaEquipos(equipo2, false);
-        System.out.println("|_ Ha cambiado el valor de la suscripcion 1 a: " + suscripcion1.getAbonoTotal());
+        System.out.println("|_ Ha cambiado el valor de la suscripcion del equipo 1 a: " + equipo1.getValorSuscripcionFormat());
+        System.out.println("|_ Ha cambiado el valor de la suscripcion 1 debiado a cambio en valor de equipo 1 a: " + suscripcion1.getAbonoTotal());
         
         System.out.println("\n==== EQUIPOS EN SUSCRIPCION 3 ====");
         // Una forma que nos permita concatenar el formato de clubes cuando nos suscribimos a ellos.
