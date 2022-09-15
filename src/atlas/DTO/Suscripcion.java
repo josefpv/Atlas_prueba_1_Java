@@ -4,6 +4,9 @@
  */
 package atlas.DTO;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
 /**
  *
  * @author jpenaloza
@@ -87,6 +90,7 @@ public class Suscripcion {
         return "$" + String.valueOf(formatea.format(valor));
     }
     
+
     @Override
     public String toString(){
         int numero = this.Numero;
@@ -95,8 +99,9 @@ public class Suscripcion {
         String abono = formateaPrecio(this.AbonoTotal);
         
         return "ID Suscripcion: " + numero  + "\n" +
-                "Usuario suscrito: " + usuario.getNombre() + "\n" + 
+                "Usuario suscrito: " + usuario.getNombreCompleto()+ "\n" + 
                 "Email usuario suscrito: " + usuario.getEmail() + "\n" + 
+                "Fecha Nacimiento Usuario: " + usuario.getFechaNacimiento() + "\n" + 
                 "Equipos: " + equipos + "\n" +
                 "Abono total: " + abono;
         

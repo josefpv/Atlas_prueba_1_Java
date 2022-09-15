@@ -30,7 +30,10 @@ public class Principal {
         System.out.println("|_ Registrando: docog");
         usuario1.setId(1000);
         usuario1.setRun(26539208, '3');
-        usuario1.setNombre("dcog");
+        usuario1.setNombreCompleto("Pedro Perez");
+        usuario1.setNombreUsuario("dcog");
+        //todas las fechas deben ser válidas en formato año/mes/día.
+        usuario1.setFechaNacimiento("1995/09/12");
         usuario1.setEdad(44);
         usuario1.setTelefono("56635221254");
         usuario1.setEmail("david.cogiolle@gmail.com");
@@ -39,7 +42,9 @@ public class Principal {
         System.out.println("|_ Registrando: ggft");
         usuario2.setId(1001);
         usuario2.setRun(26539208, '3');
-        usuario2.setNombre("ggft");
+        usuario2.setNombreCompleto("Andrea Gomez");
+        usuario2.setNombreUsuario("ggft");
+        usuario2.setFechaNacimiento("2000/02/08");
         usuario2.setEdad(23);
         usuario2.setTelefono("56828884115");
         usuario2.setEmail("gerr.adere@live.cl");
@@ -48,7 +53,9 @@ public class Principal {
         System.out.println("|_ Registrando: scodiio");
         usuario3.setId(1002);
         usuario3.setRun(26539208, '3');
-        usuario3.setNombre("scodiio");
+        usuario3.setNombreCompleto("Luis Castillo");
+        usuario3.setNombreUsuario("scodiio");
+        usuario3.setFechaNacimiento("1986/11/25");
         usuario3.setEdad(30);
         usuario3.setTelefono("56823002102");
         usuario3.setEmail("sergio.villanueva@gmail.com");
@@ -179,7 +186,6 @@ public class Principal {
         
         
         System.out.println("\n");
-        
         
       
     }

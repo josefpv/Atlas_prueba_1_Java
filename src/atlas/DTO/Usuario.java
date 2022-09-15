@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package atlas.DTO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 /**
@@ -14,7 +16,9 @@ public class Usuario {
     private int Id;
     private int Run;
     private char Dv;
-    private String Nombre;
+    private String NombreCompleto;
+    private String NombreUsuario;
+    private String FechaNacimiento;
     private int Edad;
     private String Telefono;
     private String Email;
@@ -22,14 +26,26 @@ public class Usuario {
     
     public Usuario() {
         this.Id = 0;
-        this.Nombre = "";
+        this.Run = 0;
+        this.Dv = '0';
+        this.NombreCompleto = "";
+        this.NombreUsuario = "";
+        this.FechaNacimiento = "";
+        this.Edad = 0;
+        this.Telefono = "";
         this.Email = "";
         this.Password = "";
     }
 
-    public Usuario(int Id, String Nombre, String Email, String Password) {
+    public Usuario(int Id, int Run, char Dv, String NombreCompleto, String NombreUsuario, String FechaNacimiento, int Edad, String Telefono, String Email, String Password) {
         this.Id = Id;
-        this.Nombre = Nombre;
+        this.Run = Run;
+        this.Dv = Dv;
+        this.NombreCompleto = NombreCompleto;
+        this.NombreUsuario = NombreUsuario;
+        this.FechaNacimiento = FechaNacimiento;
+        this.Edad = Edad;
+        this.Telefono = Telefono;
         this.Email = Email;
         this.Password = Password;
     }
@@ -57,14 +73,30 @@ public class Usuario {
         return this.Dv;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public String getNombreCompleto() {
+        return NombreCompleto;
     }
 
-    public void setNombre(String Nombre) {
-        if (Nombre.length() > 3) {
-            this.Nombre = Nombre;
+    public void setNombreCompleto(String NombreCompleto) {
+        this.NombreCompleto = NombreCompleto;
+    }
+    
+    public String getNombreUsuario() {
+        return this.NombreUsuario;
+    }
+
+    public void setNombreUsuario(String NombreUsuario) {
+        if (NombreUsuario.length() > 3) {
+            this.NombreUsuario = NombreUsuario;
         }
+    }
+    
+    public String getFechaNacimiento() {
+        return FechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String FechaNacimiento) {
+        this.FechaNacimiento = FechaNacimiento;
     }
     
     public int getEdad() {
@@ -146,6 +178,25 @@ public class Usuario {
     
     public void reiniciaPassword(String temporalPass) {
         this.Password = temporalPass;
+    }
+    
+    public boolean validaFecha(String Fecha){
+
+        if (Fecha.equals("")) {
+            return false;
+        }
+       
+        SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
+        sdformat.setLenient(false);
+        try{
+            sdformat.parse(Fecha);
+            return true;
+        }
+        catch(ParseException e)
+        {
+            return false;
+        }
+        
     }
     
     
